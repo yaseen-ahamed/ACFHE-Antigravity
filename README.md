@@ -19,20 +19,13 @@ View your app in AI Studio: https://ai.studio/apps/4b0f06e4-1119-4b56-871c-7f2a2
 3. Run the app:
    `npm run dev`
 
-## SPA routing fallback for BrowserRouter
+## Hostinger Git Deployment
 
-Because the app uses `BrowserRouter`, direct requests to routes like `/about` and `/programmes` must be rewritten to `index.html` by your web server.
+Use these exact build/publish settings in Hostinger:
 
-### Apache (.htaccess)
-
-A ready-to-use `.htaccess` is included at `public/.htaccess` and will be copied to the publish root during build. It serves existing files/folders as-is and rewrites unknown paths to `/index.html`.
-
-### Nginx-like config
-
-Use a fallback in your server block:
-
-```nginx
-location / {
-  try_files $uri $uri/ /index.html;
-}
-```
+1. Build command sequence:
+   - `npm install`
+   - `npm run build`
+2. Publish directory (website root): `dist`
+3. If deploying manually by file upload, upload only the contents of `dist/` (do not upload `src/` or the project root `index.html`).
+4. After deployment, hard-refresh with **Ctrl+F5** and confirm in the browser Network tab that JS files are served from `/assets/...`.
