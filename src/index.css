@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #B8952A;
+  --color-secondary: #DFCA89;
+  --color-dark: #1E1E1E;
+  --color-surface: #ffffff;
+  --color-light: #FDF9F1;
+  --color-accent: #8A6D1C;
+
+  --font-serif: "Poppins", sans-serif;
+  --font-sans: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-light);
+  color: #4B5563;
+  /* text-gray-600 */
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-serif {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  background-clip: unset;
+  color: var(--color-dark);
+}
+
+/* Custom Utilities */
+.glass-nav {
+  background: rgba(253, 249, 241, 0.95);
+  /* frosted cream heavy */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(184, 149, 42, 0.1);
+}
+
+.gold-gradient-text {
+  color: var(--color-primary);
+}
+
+.gold-shimmer {
+  position: relative;
+  overflow: hidden;
+  color: var(--color-primary);
+}
+
+.gold-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(to right,
+      transparent,
+      rgba(184, 149, 42, 0.15),
+      transparent);
+  transform: skewX(-20deg);
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    left: 200%;
+  }
+}
+
+.card-3d {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 32px;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d:hover {
+  transform: translateY(-4px);
+  /* Gently upwards */
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  /* Dark text on gold background as requested */
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  /* pill-shaped */
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  box-shadow: 0 4px 14px 0 rgba(184, 149, 42, 0.3);
+  /* soft gold shadow */
+}
+
+.btn-primary:hover {
+  background-color: #9A7B1E;
+  /* darker gold hover */
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(184, 149, 42, 0.4);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  /* pill-shaped */
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+  border: 2px solid var(--color-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px 0 rgba(184, 149, 42, 0.3);
+}
+
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem 0;
+  width: 100%;
+}
+
+.section-divider::before,
+.section-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(184, 149, 42, 0.2));
+}
+
+.section-divider::after {
+  background: linear-gradient(to left, transparent, rgba(184, 149, 42, 0.2));
+}
+
+.section-divider .diamond {
+  width: 12px;
+  height: 12px;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+  transform: rotate(45deg);
+  margin: 0 1rem;
+}
+
+.bg-light-section {
+  background-color: var(--color-light);
+  color: #4B5563;
+}
+
+.bg-dark-section {
+  background-color: white;
+  color: #4B5563;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.img-stroke {
+  border: none;
+  border-radius: 32px;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.06);
+}
+
+.img-stroke:hover {
+  box-shadow: 0 15px 45px -10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
