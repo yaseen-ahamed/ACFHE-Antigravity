@@ -36,3 +36,31 @@ Use these exact steps when deploying to `public_html`:
    - Not expected: Hostinger 404 page.
 8. If direct routes still fail, check Hostinger access/error logs for rewrite or module issues (`mod_rewrite`, denied overrides, missing `.htaccess` parsing, etc.).
 9. Hard-refresh with **Ctrl+F5** and confirm in the browser Network tab that JS files are served from `/assets/...`.
+
+## Blank white page on Hostinger (most common cause)
+
+If your domain shows a blank page, it usually means the **source project** was uploaded instead of the **built output**.
+
+### Why this happens
+- The project root `index.html` loads `/src/main.tsx` for development.
+- Hostinger cannot execute TypeScript/TSX modules directly in production.
+- Result: browser JS error + white page.
+
+### Fix (exact)
+1. Locally run:
+   - `npm install --legacy-peer-deps`
+   - `npm run build`
+2. Open `dist/`.
+3. Delete everything inside `public_html/` (except files you intentionally keep).
+4. Upload **only the contents inside `dist/`** into `public_html/`.
+   - `public_html/index.html` must be the one from `dist/`.
+   - `public_html/assets/...` must exist.
+   - `public_html/src/` should **not** exist.
+5. Ensure `public_html/.htaccess` exists (copied from `public/.htaccess`).
+6. Hard refresh with `Ctrl+F5` and test:
+   - `https://acfhe.com/`
+   - `https://acfhe.com/about`
+
+### Quick browser check
+Open DevTools → Console and Network.
+- If you see failures for `/src/main.tsx`, `/src/...`, or MIME/module errors, deployment is using source files, not `dist`.

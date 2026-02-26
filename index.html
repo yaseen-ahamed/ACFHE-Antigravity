@@ -10,6 +10,27 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.setTimeout(function () {
+        const root = document.getElementById('root');
+        if (!root || root.children.length > 0) return;
+
+        root.innerHTML = `
+          <div style="max-width:840px;margin:40px auto;padding:20px;font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;color:#111;">
+            <h1 style="margin:0 0 10px;">Deployment issue detected</h1>
+            <p style="margin:0 0 10px;">
+              This server is likely hosting the Vite source project instead of the production build.
+            </p>
+            <p style="margin:0 0 10px;">
+              Fix: run <code>npm run build</code> locally, then upload <strong>only the contents of <code>dist/</code></strong> to <code>public_html/</code>.
+              Ensure <code>public_html/assets/</code> exists and <code>public_html/src/</code> does not.
+            </p>
+            <p style="margin:0;">
+              If this is a local development environment, start the app with <code>npm run dev</code>.
+            </p>
+          </div>
+        `;
+      }, 2000);
+    </script>
   </body>
 </html>
-
