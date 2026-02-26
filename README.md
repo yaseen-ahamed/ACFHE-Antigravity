@@ -23,12 +23,16 @@ Use these exact steps when deploying to `public_html`:
 1. Build production files locally (or in CI):
    - `npm install --legacy-peer-deps`
    - `npm run build`
-2. In Hostinger `public_html`, remove previously uploaded source files (`src/`, repository root `index.html`, etc.).
-3. Upload the **contents of `dist/`** into `public_html` (including `index.html`, `assets/`, and `.htaccess`).
-4. Confirm deployed `index.html` references built assets under `/assets/...` (not `/src/main.tsx`).
-5. Hard-refresh with **Ctrl+F5** and test routes: `/`, `/about`, `/programmes`.
-
-### Notes
-
-- This repo now includes `public/.htaccess`, and Vite copies it into `dist/.htaccess` during build.
-- The rewrite rule ensures SPA routes like `/about` and `/programmes` resolve to `index.html` on Hostinger Apache hosting.
+2. Publish directory (website root): `dist`
+3. If deploying manually by file upload, upload only the contents of `dist/` (do not upload `src/` or the project root `index.html`).
+4. Run `./scripts/verify-spa-rewrite.sh` locally before uploading to ensure `dist/.htaccess` is present and matches `public/.htaccess`.
+5. After deployment, verify `public_html/.htaccess` exists on Hostinger and contains:
+   - existing file pass-through check (`RewriteCond %{REQUEST_FILENAME} -f`)
+   - existing directory pass-through check (`RewriteCond %{REQUEST_FILENAME} -d`)
+   - SPA fallback rewrite (`RewriteRule . /index.html [L]`)
+6. In Hostinger panel, ensure Apache rewrite support is enabled (if configurable for your plan/environment).
+7. Test a direct client-side route such as `https://<your-domain>/about` in the browser URL bar.
+   - Expected: app content renders.
+   - Not expected: Hostinger 404 page.
+8. If direct routes still fail, check Hostinger access/error logs for rewrite or module issues (`mod_rewrite`, denied overrides, missing `.htaccess` parsing, etc.).
+9. Hard-refresh with **Ctrl+F5** and confirm in the browser Network tab that JS files are served from `/assets/...`.
