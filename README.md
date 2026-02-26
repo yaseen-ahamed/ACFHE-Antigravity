@@ -28,4 +28,14 @@ Use these exact build/publish settings in Hostinger:
    - `npm run build`
 2. Publish directory (website root): `dist`
 3. If deploying manually by file upload, upload only the contents of `dist/` (do not upload `src/` or the project root `index.html`).
-4. After deployment, hard-refresh with **Ctrl+F5** and confirm in the browser Network tab that JS files are served from `/assets/...`.
+4. Run `./scripts/verify-spa-rewrite.sh` locally before uploading to ensure `dist/.htaccess` is present and matches `public/.htaccess`.
+5. After deployment, verify `public_html/.htaccess` exists on Hostinger and contains:
+   - existing file pass-through check (`RewriteCond %{REQUEST_FILENAME} -f`)
+   - existing directory pass-through check (`RewriteCond %{REQUEST_FILENAME} -d`)
+   - SPA fallback rewrite (`RewriteRule . /index.html [L]`)
+6. In Hostinger panel, ensure Apache rewrite support is enabled (if configurable for your plan/environment).
+7. Test a direct client-side route such as `https://<your-domain>/about` in the browser URL bar.
+   - Expected: app content renders.
+   - Not expected: Hostinger 404 page.
+8. If direct routes still fail, check Hostinger access/error logs for rewrite or module issues (`mod_rewrite`, denied overrides, missing `.htaccess` parsing, etc.).
+9. Hard-refresh with **Ctrl+F5** and confirm in the browser Network tab that JS files are served from `/assets/...`.
