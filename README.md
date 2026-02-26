@@ -10,21 +10,18 @@ View your app in AI Studio: https://ai.studio/apps/4b0f06e4-1119-4b56-871c-7f2a2
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+**Prerequisites:** Node.js
 
-
-1. Install dependencies:
-   `npm install`
+1. Install dependencies: `npm install`
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+3. Run the app: `npm run dev`
 
-## Hostinger Git Deployment
+## Hostinger Deployment (manual upload)
 
-Use these exact build/publish settings in Hostinger:
+Use these exact steps when deploying to `public_html`:
 
-1. Build command sequence:
-   - `npm install`
+1. Build production files locally (or in CI):
+   - `npm install --legacy-peer-deps`
    - `npm run build`
 2. Publish directory (website root): `dist`
 3. If deploying manually by file upload, upload only the contents of `dist/` (do not upload `src/` or the project root `index.html`).
