@@ -17,6 +17,8 @@ import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Programmes } from "./pages/Programmes";
+import { Diploma } from "./pages/Diploma";
+import { Certificate } from "./pages/Certificate";
 import { Campus } from "./pages/Campus";
 import { Careers } from "./pages/Careers";
 import { Admissions } from "./pages/Admissions";
@@ -44,6 +46,8 @@ function AnimatedRoutes() {
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="programmes" element={<Programmes />} />
+          <Route path="programmes/diploma-in-culinary-skills" element={<Diploma />} />
+          <Route path="programmes/certificate-in-culinary-skills" element={<Certificate />} />
           <Route path="campus" element={<Campus />} />
           <Route path="careers" element={<Careers />} />
           <Route path="admissions" element={<Admissions />} />

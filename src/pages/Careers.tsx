@@ -35,9 +35,9 @@ export function Careers() {
   return (
     <PageTransition>
       <SEO
-        title="Global Careers & Placements | ACFHE"
+        title="Hospitality Internship Abroad from India | ACFHE Careers"
         description="Launch your global hospitality career with ACFHE. We offer mandatory internships and placement assistance across India, UAE, Oman, Mauritius, and Europe."
-        keywords="Hospitality Course in Kerala, global placements, ACFHE careers, Ayurgreen Centre for Hospitality Excellence, hospitality jobs"
+        keywords="hospitality internship abroad from india, ACFHE careers, Ayurgreen Centre for Hospitality Excellence, global hospitality placements"
       />
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -135,6 +135,84 @@ export function Careers() {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Career Pathways & Salaries */}
+      <section className="py-24 bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-serif text-[#1E1E1E] font-bold mb-4">
+              Career Pathways & Outcomes
+            </h2>
+            <p className="text-[#4B5563] font-medium text-lg">
+              Expected roles and global salary benchmarks
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                role: "Commis Chef",
+                location: "India / Middle East",
+                salary: "₹3L - ₹6L / 30k - 50k AED",
+                type: "Entry Level"
+              },
+              {
+                role: "Chef de Partie",
+                location: "Global & Cruise Lines",
+                salary: "$25k - $40k USD",
+                type: "Mid Level"
+              },
+              {
+                role: "F&B Supervisor",
+                location: "Europe / UK",
+                salary: "£22k - £30k GBP",
+                type: "Entry / Mid Level"
+              },
+              {
+                role: "Sous Chef",
+                location: "Global",
+                salary: "$40k - $60k USD",
+                type: "Senior Level"
+              },
+              {
+                role: "Pastry Chef",
+                location: "Boutique Hotels",
+                salary: "₹5L - ₹10L",
+                type: "Specialized"
+              },
+              {
+                role: "Kitchen Manager",
+                location: "Resorts & Chains",
+                salary: "$35k - $55k USD",
+                type: "Supervisory"
+              }
+            ].map((job, idx) => (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="card-3d p-6 border border-gray-100 bg-white shadow-sm flex flex-col justify-between group"
+              >
+                <div>
+                  <div className="text-xs font-bold text-[#8A6D1C] uppercase tracking-widest bg-[#B8952A]/10 inline-block px-3 py-1 rounded-full mb-4">
+                    {job.type}
+                  </div>
+                  <h3 className="text-2xl font-serif font-bold text-[#1E1E1E] mb-2">{job.role}</h3>
+                  <div className="flex items-center text-[#4B5563] text-sm font-medium mb-4">
+                    <MapPin className="w-4 h-4 mr-1 text-[#B8952A]" /> {job.location}
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-gray-100">
+                  <div className="text-xs text-gray-400 uppercase tracking-widest font-bold mb-1">Average Starting Expected</div>
+                  <div className="text-[#1E1E1E] font-bold text-lg">{job.salary}</div>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

@@ -54,6 +54,79 @@ Studying in a hub of tourism allows you to build a strong professional network e
 
 Investing in a hospitality course in Kerala is an investment in a dynamic, rewarding, and globally mobile career.`,
   },
+  {
+    id: 3,
+    title: "How to Choose a Chef Course in Kerala",
+    category: "Career Guides",
+    date: "February 25, 2026",
+    author: "ACFHE Academic Team",
+    image:
+      "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    excerpt:
+      "A comprehensive guide to selecting the right culinary program, focusing on accreditation, practical training, and global pathways.",
+    content: `Are you passionate about cooking and dreaming of a global career in the culinary arts? Finding the right chef course in Kerala can be overwhelming, given the multitude of options. This guide breaks down what to look for before making your decision.
+
+1. Check for International Accreditation
+A certificate is only as good as the body that issues it. We highly recommend programs accredited by renowned international bodies like CTH UK. Our <a href="/programmes/diploma-in-culinary-skills" class="text-[#B8952A] font-bold hover:underline">Diploma in Culinary Skills</a> holds this exact accreditation, making it a passport to international kitchens.
+
+2. Hands-on Kitchen Training
+Culinary arts cannot be learned entirely from a textbook. Look for institutes that offer extensive practical hours in commercial-grade kitchens. Ensure the student-to-equipment ratio allows you ample time to practice complex techniques.
+
+3. Structured Internships
+A great chef course should map directly into a career. Look for programs with mandatory internships. For example, our <a href="/programmes/certificate-in-culinary-skills" class="text-[#B8952A] font-bold hover:underline">Certificate in Culinary Skills</a> integrates a solid internship framework, placing students in premier hotels across India and the Middle East.
+
+4. Alumni Placement Records
+Finally, ask where previous graduates are working. Transparency in placement matrices is a strong sign of an institute's reputation and industry ties. 
+
+Make an informed choice for your future. A strong foundation today is the secret ingredient for a successful career tomorrow.`,
+  },
+  {
+    id: 4,
+    title: "Hospitality Careers After 12th: A Global Pathway",
+    category: "Career Guides",
+    date: "February 28, 2026",
+    author: "ACFHE Placement Cell",
+    image:
+      "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    excerpt:
+      "Finished your 12th grade? Explore why a structured hospitality or culinary course is one of the fastest routes to an international career.",
+    content: `Completing your 12th grade marks a crucial crossroads. While traditional degree paths take 3 to 4 years, specialized hospitality and culinary courses offer a fast-tracked, highly rewarding alternative.
+
+Why Hospitality?
+The global tourism and hospitality sector is chronically short of skilled professionals. Unlike other fields where entry-level jobs are scarce, a trained chef or hospitality manager is highly sought after across cruise lines, luxury resorts, and international hotel chains.
+
+Short Duration, High ROI
+Instead of spending four years in a traditional college, you can enroll in a 12-month program. Our internationally recognized <a href="/programmes/diploma-in-culinary-skills" class="text-[#B8952A] font-bold hover:underline">Diploma in Culinary Skills</a> will have you industry-ready in just one year, complete with a six-month intensive internship. This means you start earning and building your resume years ahead of your peers.
+
+Global Mobility
+A UK-accredited certification is globally recognized, making it significantly easier to secure visas and job placements overseas. If your dream is to work in Dubai, Europe, or on a cruise ship, starting with a certified hospitality course after 12th in Kerala is arguably the smartest first step.
+
+Ready to begin? <a href="/admissions" class="text-[#B8952A] font-bold hover:underline">Reach out to our admissions team today</a>.`,
+  },
+  {
+    id: 5,
+    title: "How to Secure a Hospitality Internship Abroad from India",
+    category: "Career Guides",
+    date: "March 5, 2026",
+    author: "ACFHE Placement Cell",
+    image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+    excerpt: "Discover the step-by-step process of transitioning from a culinary student in India to an intern at a luxury hotel overseas.",
+    content: `An international internship is the undisputed launchpad for a highly successful career in hospitality. However, the process of securing one from India requires precise planning, the right accreditation, and a strong network. 
+
+1. Start with an Internationally Recognized Qualification
+Most luxury hotel chains and foreign immigration departments strictly evaluate your foundational training. A localized certificate holds very little weight in Europe or the UAE. Enrolling in programs accredited by bodies like CTH UK—such as our <a href="/programmes/diploma-in-culinary-skills" class="text-[#B8952A] font-bold hover:underline">Diploma in Culinary Skills</a>—is often a non-negotiable prerequisite to pass initial visa and employer screenings.
+
+2. Perfect Your Core Culinary & Service Skills
+Overseas internships demand a high baseline of practical competency. During your training phase, maximize your hours in commercial-grade kitchens. Mastering knife skills, basic stock preparations, and international health & safety protocols will drastically increase your chances during technical interviews.
+
+3. Leverage the Placement Network of Your Institute
+Attempting to secure an internship entirely on your own is an uphill battle. At ACFHE, our dedicated career services team brings the opportunities to you. Because our curriculum is aligned globally, international hotel brands recruit directly from our cohorts for placements in Oman, the UAE, and beyond. We prepare you with mock interviews, resume writing, and soft-skill development.
+
+4. Navigating the Visa Process
+Visa regulations vary wildly by destination (e.g., J-1 for USA, student/internship visas for the UAE or Europe). An accredited institute will dramatically simplify this process by providing the necessary sponsorship letters, course completion metrics, and direct liaison with hiring companies to process your documentation.
+
+Your dream of working abroad is highly achievable; you just need to start on the right track. Secure your future by <a href="/admissions" class="text-[#B8952A] font-bold hover:underline">applying to ACFHE today</a>.`
+  }
 ];
 
 export function Blog() {
@@ -101,6 +174,7 @@ export function Blog() {
                   <img
                     src={blog.image}
                     alt={blog.title}
+                    loading="lazy"
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute top-4 left-4 bg-[#B8952A] text-white text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-md">
@@ -125,10 +199,8 @@ export function Blog() {
                   </h2>
 
                   <div className="prose prose-lg max-w-none text-[#4B5563] font-medium leading-relaxed">
-                    {blog.content.split("\\n\\n").map((paragraph, i) => (
-                      <p key={i} className="mb-6">
-                        {paragraph.trim()}
-                      </p>
+                    {blog.content.split("\n\n").map((paragraph, i) => (
+                      <p key={i} className="mb-6" dangerouslySetInnerHTML={{ __html: paragraph.trim() }} />
                     ))}
                   </div>
 

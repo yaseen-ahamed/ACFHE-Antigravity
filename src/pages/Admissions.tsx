@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { PageTransition } from "../components/PageTransition";
 import { SectionDivider } from "../components/SectionDivider";
 import { SEO } from "../components/SEO";
+import { Helmet } from "react-helmet-async";
 import {
   Calendar,
   ChevronDown,
@@ -9,7 +10,7 @@ import {
   FileText,
   CheckCircle2,
 } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const faqs = [
   {
@@ -56,7 +57,7 @@ export function Admissions() {
         {
           method: "POST",
           body: formData,
-        },
+        }
       );
 
       if (response.ok) {
@@ -76,10 +77,26 @@ export function Admissions() {
   return (
     <PageTransition>
       <SEO
-        title="Admissions | ACFHE Hospitality College in Kerala"
-        description="Apply now to ACFHE, a top hospitality college in Kerala. Check eligibility criteria, intake dates, and start your hospitality journey today."
-        keywords="Admissions ACFHE, Hospitality College in Kerala, Ayurgreen Centre for Hospitality Excellence, apply hospitality course"
+        title="ACFHE Edappal Admissions | Apply to ACFHE"
+        description="Apply now to ACFHE Edappal, the top hospitality college in Kerala. Check eligibility criteria, intake dates, and start your hospitality journey today."
+        keywords="ACFHE edappal admissions, ACFHE admission process, Hospitality College in Kerala"
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.a,
+              },
+            })),
+          })}
+        </script>
+      </Helmet>
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <motion.div

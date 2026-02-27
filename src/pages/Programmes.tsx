@@ -30,9 +30,9 @@ const programmes = [
   {
     title: "Certificate in Culinary Skills",
     level: "Level 2, CTH",
-    duration: "~4 months",
-    breakdown: "3m training + 1m internship",
-    internship: "1 month mandatory",
+    duration: "~12 months",
+    breakdown: "6m training + 6m internship",
+    internship: "6 months mandatory",
     eligibility: "18 & above",
     desc: "A shorter fast-track program focused on core culinary skills. Prepares students for entry-level kitchen roles.",
     outcomes: [
@@ -48,9 +48,9 @@ export function Programmes() {
   return (
     <PageTransition>
       <SEO
-        title="Hospitality Course in Kerala | ACFHE Programmes"
-        description="Explore CTH UK-accredited hospitality courses in Kerala at ACFHE. We offer Diploma and Certificate programs in Culinary Skills with global placement opportunities."
-        keywords="Hospitality Course in Kerala, ACFHE, Ayurgreen Centre for Hospitality Excellence, culinary programs, diploma in culinary skills"
+        title="CTH Accredited Hospitality Courses India | ACFHE Programmes"
+        description="Explore CTH UK-accredited hospitality courses in India at ACFHE Kerala. We offer global Diploma and Certificate programs in Culinary Skills."
+        keywords="cth accredited hospitality courses india, ACFHE, Ayurgreen Centre for Hospitality Excellence, culinary programs, best hospitality courses in kerala"
       />
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative overflow-hidden">
@@ -175,8 +175,8 @@ export function Programmes() {
                 </div>
 
                 <div className="mt-12 pt-8 border-t border-gray-100 text-center">
-                  <Link to="/admissions" className="btn-primary w-full shadow-lg">
-                    Apply for {prog.title.split(" ")[0]}
+                  <Link to={index === 0 ? "/programmes/diploma-in-culinary-skills" : "/programmes/certificate-in-culinary-skills"} className="btn-primary w-full shadow-lg text-center block max-w-sm mx-auto">
+                    View {prog.title.split(" ")[0]} Details
                   </Link>
                 </div>
               </motion.div>

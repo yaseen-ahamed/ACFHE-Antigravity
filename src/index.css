@@ -13,42 +13,44 @@
   --font-sans: "Poppins", sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
 
-body {
-  font-family: var(--font-sans);
-  background-color: var(--color-light);
-  color: #4B5563;
-  /* text-gray-600 */
-  overflow-x: hidden;
-}
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-light);
+    color: #4B5563;
+    /* text-gray-600 */
+    overflow-x: hidden;
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.font-serif {
-  font-family: var(--font-serif);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: var(--color-dark);
-}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-serif {
+    font-family: var(--font-serif);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-dark);
+  }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  background: none;
-  -webkit-background-clip: unset;
-  -webkit-text-fill-color: unset;
-  background-clip: unset;
-  color: var(--color-dark);
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+    background-clip: unset;
+    color: var(--color-dark);
+  }
 }
 
 /* Custom Utilities */

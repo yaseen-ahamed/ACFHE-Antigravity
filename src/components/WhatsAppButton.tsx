@@ -1,10 +1,20 @@
 export function WhatsAppButton() {
+  const handleWhatsAppClick = () => {
+    if (typeof window !== "undefined" && (window as any).dataLayer) {
+      (window as any).dataLayer.push({
+        event: "whatsapp_click",
+        button_location: "floating_widget"
+      });
+    }
+  };
+
   return (
     <a
       href="https://wa.me/917034886897"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
+      onClick={handleWhatsAppClick}
+      className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
       aria-label="Chat on WhatsApp"
     >
       <svg

@@ -11,13 +11,16 @@ import {
   Award,
   ChevronLeft,
   ChevronRight,
+  Star,
 } from "lucide-react";
 
+import ACFHEBanner4 from "../../Assets/ACFHE.png";
+
 const heroImages = [
+  ACFHEBanner4, // Local image banner 4
   "https://lh3.googleusercontent.com/d/1AGX-YY3E-Q4W_uyDDD8duKQuaiGLqI2i", // ACFHE Banner 1
   "https://lh3.googleusercontent.com/d/14w1npr_FD2-I0zXmA0gT0gZwFUp29nTZ", // ACFHE Banner 2
   "https://lh3.googleusercontent.com/d/1QNrTR9iEJwCCetKNRlCQS9zkYFyU-XKe", // ACFHE Banner 3
-  "https://lh3.googleusercontent.com/d/18fgV8356FiQkVqsP7SHRA7CWnVVEDXhr", // ACFHE Hospitality
 ];
 
 export function Home() {
@@ -78,9 +81,9 @@ export function Home() {
   return (
     <PageTransition>
       <SEO
-        title="ACFHE | Top Hospitality College in Kerala"
-        description="Ayurgreen Centre for Hospitality Excellence (ACFHE) is a premier hospitality institute in Kerala offering CTH UK-accredited hospitality courses and culinary programs."
-        keywords="ACFHE, Ayurgreen Centre for Hospitality Excellence, Hospitality College in Kerala, Hospitality Course in Kerala, Hospitality institute in Kerala, culinary school, hotel management"
+        title="ACFHE | Best Hospitality College in Kerala"
+        description="Ayurgreen Centre for Hospitality Excellence (ACFHE) is the best hospitality college in Kerala offering CTH UK-accredited hospitality courses and culinary programs."
+        keywords="best hospitality college in kerala, ACFHE, Ayurgreen Centre for Hospitality Excellence, hospitality institute in Kerala, culinary school"
       />
 
       {/* Hero Section */}
@@ -144,7 +147,7 @@ export function Home() {
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-[#8A6D1C] block mb-1">For Students</span>
                 <h3 className="font-serif text-[#1E1E1E] font-bold text-base leading-tight">Master Culinary Arts & Global Hospitality</h3>
-                <Link to="/programmes" className="text-sm text-[#B8952A] font-bold mt-2 inline-flex items-center hover:text-[#9A7B1E] transition-colors uppercase tracking-wider">
+                <Link to="/programmes/diploma-in-culinary-skills" className="text-sm text-[#B8952A] font-bold mt-2 inline-flex items-center hover:text-[#9A7B1E] transition-colors uppercase tracking-wider">
                   Explore Programmes <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
@@ -200,6 +203,7 @@ export function Home() {
               <Link to="/about" className="bg-[#DFCA89] hover:bg-[#B8952A] text-[#1E1E1E] px-8 py-3.5 rounded-full font-bold tracking-widest uppercase text-sm transition-colors shadow-lg flex items-center justify-center w-full sm:w-auto">
                 START HERE <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
+
             </motion.div>
           </div>
         </div>
@@ -256,28 +260,28 @@ export function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            {/* Diploma Card (Dark Slate) */}
+            {/* Diploma Card */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="card-3d p-10 relative overflow-hidden group bg-[#1E1E1E]"
+              className="card-3d p-10 relative overflow-hidden group"
             >
-              <div className="inline-block bg-[#B8952A]/20 text-[#DFCA89] font-bold tracking-widest uppercase text-xs px-3 py-1 rounded-full mb-4">
+              <div className="inline-block bg-[#B8952A]/20 text-[#8A6D1C] font-bold tracking-widest uppercase text-xs px-3 py-1 rounded-full mb-4">
                 Level 2 • 12 Months
               </div>
-              <h3 className="text-4xl font-serif text-white mb-4 font-bold tracking-tight">
+              <h3 className="text-4xl font-serif text-[#1E1E1E] mb-4 font-bold tracking-tight drop-shadow-sm">
                 Diploma in Culinary Skills
               </h3>
-              <p className="text-gray-300 mb-8 leading-relaxed font-medium">
+              <p className="text-[#4B5563] mb-8 leading-relaxed font-medium">
                 A comprehensive full-time program including a 6-month mandatory
                 industry internship. Master advanced techniques and kitchen
                 management.
               </p>
               <Link
-                to="/programmes"
-                className="inline-flex items-center text-[#DFCA89] hover:text-[#B8952A] transition-colors uppercase text-sm tracking-wider font-bold"
+                to="/programmes/diploma-in-culinary-skills"
+                className="inline-flex items-center text-[#8A6D1C] hover:text-[#B8952A] transition-colors uppercase text-sm tracking-wider font-bold"
               >
                 View Details <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
@@ -292,17 +296,17 @@ export function Home() {
               className="card-3d p-10 relative overflow-hidden group bg-[#F5EEDB]"
             >
               <div className="inline-block bg-[#B8952A]/20 text-[#8A6D1C] font-bold tracking-widest uppercase text-xs px-3 py-1 rounded-full mb-4">
-                Level 2 • 4 Months
+                Level 2 • 12 Months
               </div>
               <h3 className="text-4xl font-serif text-[#1E1E1E] mb-4 font-bold tracking-tight drop-shadow-sm">
                 Certificate in Culinary Skills
               </h3>
               <p className="text-[#4B5563] mb-8 leading-relaxed font-medium">
                 A fast-track program focused on core culinary skills, including
-                a 1-month internship. Perfect for entry-level kitchen roles.
+                a 6-month internship. Perfect for entry-level kitchen roles.
               </p>
               <Link
-                to="/programmes"
+                to="/programmes/certificate-in-culinary-skills"
                 className="inline-flex items-center text-[#8A6D1C] hover:text-[#B8952A] transition-colors uppercase text-sm tracking-wider font-bold"
               >
                 View Details <ArrowRight className="ml-2 w-4 h-4" />
@@ -379,6 +383,7 @@ export function Home() {
               <img
                 src="https://lh3.googleusercontent.com/d/10XpIuM6yOWcvfRaMXDoP32G5ZnYmnqrz"
                 alt="Ayurgreen Campus"
+                loading="lazy"
                 className="w-full h-full object-cover rounded-[24px] pointer-events-none group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-white/0 group-hover:bg-[#1E1E1E]/70 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-[32px]"></div>
@@ -391,6 +396,7 @@ export function Home() {
           </div>
         </div>
       </section>
+
 
       {/* Latest Insights / Blog Preview */}
       <section className="py-32">
@@ -422,6 +428,7 @@ export function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Hospitality College in Kerala"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
@@ -455,6 +462,7 @@ export function Home() {
                 <img
                   src="https://images.unsplash.com/photo-1581349485608-9469926a8e5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                   alt="Hospitality Course in Kerala"
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>

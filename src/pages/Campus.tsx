@@ -95,6 +95,7 @@ export function Campus() {
         </div>
       </section>
 
+
       {/* Image Grid */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,6 +133,7 @@ export function Campus() {
                 <img
                   src={img.url}
                   alt={img.title}
+                  loading="lazy"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E1E1E]/90 via-[#1E1E1E]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

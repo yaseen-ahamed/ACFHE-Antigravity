@@ -1,7 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 import { clsx } from "clsx";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import React, { useState } from "react";
+import LogoImage from "../../Assets/ACFHE Logo.png";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -24,7 +25,7 @@ export function Navbar() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img
-              src="https://lh3.googleusercontent.com/d/1LCVsW9RhHV_Vt7hkdprBerS8u5iOMQeh"
+              src={LogoImage}
               alt="ACFHE Logomark"
               className="h-16 w-auto object-contain"
               onError={(e) => {

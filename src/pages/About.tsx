@@ -3,6 +3,8 @@ import { PageTransition } from "../components/PageTransition";
 import { SectionDivider } from "../components/SectionDivider";
 import { SEO } from "../components/SEO";
 import { Heart, Shield, Star, Leaf, Users, Award } from "lucide-react";
+import { Link } from "react-router-dom";
+import GreetingImage from "../../Assets/ACFHE Greeting.png";
 
 const values = [
   {
@@ -41,9 +43,9 @@ export function About() {
   return (
     <PageTransition>
       <SEO
-        title="About ACFHE | Ayurgreen Centre for Hospitality Excellence"
+        title="About ACFHE | Best Hospitality College in Kerala"
         description="Learn about ACFHE, a leading hospitality institute in Kerala. We offer internationally benchmarked hospitality education rooted in excellence, empathy, and professionalism."
-        keywords="About ACFHE, Ayurgreen Centre for Hospitality Excellence, Hospitality College in Kerala, Hospitality institute in Kerala"
+        keywords="About ACFHE, best hospitality college in kerala, Ayurgreen Centre for Hospitality Excellence, hospitality institute in Kerala"
       />
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
@@ -68,8 +70,9 @@ export function About() {
           className="w-full aspect-[21/9] rounded-[32px] overflow-hidden shadow-2xl relative"
         >
           <img
-            src="https://lh3.googleusercontent.com/d/1FnlPsaid3Yh9NhnYHJaU6dVA-GKkQHlf"
-            alt="Greeting"
+            src={GreetingImage}
+            alt="Students at Ayurgreen Centre for Hospitality Excellence (ACFHE) Campus"
+            loading="lazy"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -107,7 +110,7 @@ export function About() {
                 {
                   year: "2026",
                   title: "ACFHE Launch",
-                  desc: "Opening of the purpose-built campus in Edappal, offering CTH UK-accredited culinary programs.",
+                  desc: <>Opening of the purpose-built campus in Edappal, offering <Link to="/programmes/diploma-in-culinary-skills" className="text-[#B8952A] hover:underline font-bold">CTH UK-accredited culinary programs</Link>.</>,
                 },
               ].map((item, index) => (
                 <motion.div
@@ -141,6 +144,7 @@ export function About() {
           </div>
         </div>
       </section>
+
 
       {/* Core Values */}
       <section className="py-32 bg-[#F5EEDB]">
